@@ -1,23 +1,139 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="width=device-width, initial scale=1.0">
-        <title>Archbishop Benjamin Nzimbi Foundation</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id ="header">
-            <div class="container">
-                <nav>
-                   
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about us.html">About</a></li>
-                        <li><a href="contact us.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>  
-        </div>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Archbishop Nzimbi Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="branding">
+      <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+      <h1>Archbishop Nzimbi Foundation</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#vision">Vision & Mission</a>
+      <a href="#values">Core Values</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#focus">Focus</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>Transforming Communities, One Life at a Time</h2>
+  <p>Empowering individuals and institutions through faith, mentorship, and sustainable development.</p>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>
+    Archbishop Nzimbi Foundation (ABNF) is a Christian-based organization dedicated to the holistic transformation of communities, families, and institutions through skill-building, leadership development, and sustainable development programs.
+  </p>
+</section>
+
+<section id="vision" class="section highlight">
+  <div class="about-col-2">
+    <h2 class="sub-title">Vision & Mission</h2>
+    <p>
+      Our core is rooted in transforming lives through empowerment, education, leadership, and love. We believe a thriving society starts with equipping individuals and families with the right tools and values.
+    </p>
+
+    <div class="tab-titles">
+      <p class="tab-links active-link" onclick="openTab('Vision')">Vision</p>
+      <p class="tab-links" onclick="openTab('Mission')">Mission</p>
+    </div>
+
+    <div class="tab-contents active-tab" id="Vision">
+      <ul>
+        <li><span>To see a developed and transformed community enjoying life in its fullness.</span></li>
+      </ul>
+    </div>
+
+    <div class="tab-contents" id="Mission">
+      <ul>
+        <li><span>To equip communities with diverse skills for improved livelihoods through capacity building, training, mentorship, and sustainable development programs.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="values" class="section">
+  <h2>Core Values</h2>
+  <ul>
+    <li>We are Christian</li>
+    <li>We believe in family</li>
+    <li>We value integrity</li>
+    <li>We value equality of opportunities</li>
+    <li>We value life</li>
+    <li>We value the environment</li>
+  </ul>
+</section>
+
+<section id="objectives" class="section highlight">
+  <h2>Objectives</h2>
+  <ol>
+    <li>Enhance access to education, food, health, water, sanitation, environment, peace, and justice.</li>
+    <li>Train families and communities in transformational leadership and development.</li>
+    <li>Mentor leaders and institutions for sustainability and character development.</li>
+    <li>Promote intergenerational dialogue for community well-being.</li>
+    <li>Establish a fund for grants and donations to support vulnerable groups.</li>
+  </ol>
+</section>
+
+<section id="focus" class="section">
+  <h2>Strategic Areas of Focus</h2>
+  <ul>
+    <li>Education</li>
+    <li>Health</li>
+    <li>Water, Sanitation & Hygiene (WASH)</li>
+    <li>Food Security & Livelihood</li>
+    <li>Climate Change</li>
+    <li>Peace & Justice</li>
+    <li>Youth Development & Mentorship</li>
+    <li>Family Life Education</li>
+    <li>Chaplaincy</li>
+  </ul>
+</section>
+
+<section id="contact" class="section highlight contact">
+  <h2>Contact Us</h2>
+  <form>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Archbishop Nzimbi Foundation. All rights reserved.</p>
+</footer>
+
+<script>
+  function openTab(tabName) {
+    const tabLinks = document.querySelectorAll(".tab-links");
+    const tabContents = document.querySelectorAll(".tab-contents");
+
+    tabLinks.forEach(link => link.classList.remove("active-link"));
+    tabContents.forEach(content => content.classList.remove("active-tab"));
+
+    document.getElementById(tabName).classList.add("active-tab");
+    event.currentTarget.classList.add("active-link");
+  }
+</script>
+
+</body>
 </html>
