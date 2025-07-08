@@ -173,6 +173,32 @@
     event.currentTarget.classList.add("active-link");
   }
 </script>
+<script>
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselContainer = document.querySelector('.carousel-container');
+  let scrollSpeed = 0.5; // default speed
+  let scrollPos = 0;
+
+  function autoScroll() {
+    scrollPos += scrollSpeed;
+    if (scrollPos >= carouselTrack.scrollWidth / 2) {
+      scrollPos = 0; // reset
+    }
+    carouselTrack.style.transform = `translateX(-${scrollPos}px)`;
+    requestAnimationFrame(autoScroll);
+  }
+
+  // Speed up on hover
+  carouselContainer.addEventListener('mouseenter', () => {
+    scrollSpeed = 2.5; // faster on hover
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    scrollSpeed = 0.5; // back to normal
+  });
+
+  autoScroll(); // start scrolling
+</script>
 
 </body>
 </html>
