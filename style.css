@@ -1,9 +1,11 @@
+/* Global Styles */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 h1, h2, h3 {
@@ -11,6 +13,7 @@ h1, h2, h3 {
   color: #6a1b9a;
 }
 
+/* Header */
 header {
   background-color: #9B59B6;
   color: white;
@@ -58,6 +61,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Hero Section */
 .hero {
   background: linear-gradient(rgba(155, 89, 182, 0.8), rgba(155, 89, 182, 0.8)), url('images/hero-bg.jpg') center/cover no-repeat;
   color: white;
@@ -76,7 +80,7 @@ nav a:hover {
   margin: auto;
 }
 
-/* Section styling */
+/* Section Styling */
 .section {
   padding: 3rem 2rem;
   max-width: 1000px;
@@ -86,23 +90,39 @@ nav a:hover {
   border-radius: 10px;
   margin-bottom: 2rem;
 }
-#focus ul li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  padding: 5px 0;
-}
-
-#focus ul li a:hover {
-  color: #007bff; /* Example hover color */
-}
-
 
 .section.highlight {
   background-color: #f3ecfa;
 }
 
-/* Vision Tabs */
+/* Focus Section - Strategic Areas */
+#focus ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#focus ul li {
+  margin-bottom: 10px;
+}
+
+#focus ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 10px 15px;
+  background-color: #f3ecfa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+#focus ul li a:hover {
+  background-color: #e1d7f3;
+  color: #6a1b9a;
+}
+
+/* Vision & Mission Tabs */
 .about-col-2 {
   max-width: 800px;
   margin: auto;
@@ -180,6 +200,13 @@ nav a:hover {
   font-size: 1rem;
 }
 
+.contact input:focus,
+.contact textarea:focus,
+.contact button:focus {
+  outline: 2px solid #6a1b9a;
+  border-color: #9B59B6;
+}
+
 .contact button {
   margin-top: 1.5rem;
   padding: 0.75rem;
@@ -204,4 +231,38 @@ footer {
   background-color: #9B59B6;
   color: white;
   margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+
+  .tab-titles {
+    flex-direction: column;
+  }
+
+  .tab-links {
+    margin-bottom: 10px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
