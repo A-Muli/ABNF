@@ -231,26 +231,20 @@
     document.getElementById(tabName).classList.add("active-tab");
     event.currentTarget.classList.add("active-link");
   }
-
-  // Carousel functionality
-  let currentSlide = 0;
+   let currentSlide = 0;
   const slides = document.querySelectorAll('.carousel-item');
   const dots = document.querySelectorAll('.dot');
-
-  // Fix: dynamically set carousel width
   const slideWrapper = document.querySelector('.carousel-slide');
-  slideWrapper.style.width = `${slides.length * 100}%`;
 
   function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      dots[i].classList.remove('active');
-    });
+    if (!slideWrapper) return;
+    const slideWidthPercent = 100 / slides.length;
+    const offset = index * slideWidthPercent;
+    slideWrapper.style.transform = `translateX(-${offset}%)`;
 
-    slides[index].classList.add('active');
+    // Update active dot
+    dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
-
-    slideWrapper.style.transform = `translateX(-${index * (100 / slides.length)}%)`;
 
     currentSlide = index;
   }

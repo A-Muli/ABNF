@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | ABNF</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="branding">
+      <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+      <h1>Archbishop Nzimbi Foundation</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#focus">Focus Areas</a>
+      <a href="contact us.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section contact">
+  <h2>Contact Us</h2>
+
+<div class="contact-card">
+  <h3>Reach Out</h3>
+  <p> Nairobi, Kenya</p>
+  <p> +254 712 345678</p>
+  <p> mulimwatu@gmail.com</p>
+</div>
+
+
+
+    <!-- Contact Form -->
+    <form action="https://formsubmit.co/mulimwatu@gmail.com" method="POST" class="contact-card">
+      <h3>Send Us a Message</h3>
+
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thank-you.html">
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Archbishop Nzimbi Foundation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
