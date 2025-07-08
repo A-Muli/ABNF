@@ -322,7 +322,7 @@ footer {
 
 .carousel-item:hover .carousel-image {
   transform: scale(1.05);
-  transition: transform 0.5s ease;
+  transition: transform 1.5s ease;
 }
 .carousel-container {
   overflow: hidden;
@@ -376,4 +376,27 @@ footer {
   .hero-content p {
     font-size: 1rem;
   }
+}
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  font-size: 1rem;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+  color: #9B59B6;
+}
+
+.contact form {
+  flex: 1;
+  min-width: 250px;
 }
