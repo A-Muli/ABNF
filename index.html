@@ -22,7 +22,7 @@
       <a href="#focus">Focus Areas</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>
+  </div>    
 </header>
 
 <!-- Hero Banner -->
@@ -31,7 +31,7 @@
     <div class="hero-content">
       <h2>Transforming Communities, One Life at a Time</h2>
       <p>Empowering individuals and institutions through faith, mentorship, and sustainable development.</p>
-      <a href="#about" class="btn">Learn More</a>
+     <a href="pages/about.html" class="btn">Learn More</a>
     </div>
   </div>
 </section>
@@ -69,47 +69,105 @@
   </div>
 </section>
 
-<!-- Chic Auto-Scrolling Impact Carousel -->
-<section id="impact" class="section">
+<section id="impact" class="carousel-section">
   <h2>Our Work in Action</h2>
   <div class="carousel-container">
-    <div class="carousel-track">
-      <a href="education.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/school.jpg');">
-          <div class="overlay-text">Education</div>
-        </div>
-      </a>
-      <a href="wash.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/wash.jpg');">
-          <div class="overlay-text">WASH</div>
-        </div>
-      </a>
-      <a href="food-security.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/food security.avif');">
-          <div class="overlay-text">Food Security</div>
-        </div>
-      </a>
-      <a href="chaplaincy.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/chaplaincy.jpg');">
-          <div class="overlay-text">Chaplaincy</div>
-        </div>
-      </a>
-      <a href="health.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/health.avif');">
-          <div class="overlay-text">Health</div>
-        </div>
-      </a>
-      <a href="peace-justice.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/peace and justice.jpg');">
-          <div class="overlay-text">Peace & Justice</div>
-        </div>
-      </a>
-      <a href="youth-development.html" class="carousel-item">
-        <div class="carousel-image" style="background-image: url('images/youth development.jpg');">
-          <div class="overlay-text">Youth Development</div>
-        </div>
-      </a>
+    <button class="carousel-arrow left" onclick="moveSlide(-1)">&#10094;</button>
+
+    <div class="carousel-slide">
+      <!-- Slide 1: Education -->
+      <div class="carousel-item active" style="background-image: url('images/school.jpg');">
+        <a href="pages/education.html">
+          <div class="carousel-caption">
+            <h3>Education</h3>
+            <p>Empowering through knowledge and opportunity.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 2: WASH -->
+      <div class="carousel-item" style="background-image: url('images/wash.jpg');">
+        <a href="pages/wash.html">
+          <div class="carousel-caption">
+            <h3>WASH</h3>
+            <p>Improving health through clean water and sanitation.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 3: Food Security -->
+      <div class="carousel-item" style="background-image: url('images/food security.avif');">
+        <a href="pages/food-security.html">
+          <div class="carousel-caption">
+            <h3>Food Security</h3>
+            <p>Creating sustainable livelihoods and nutrition access.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 4: Chaplaincy -->
+      <div class="carousel-item" style="background-image: url('images/chaplaincy.jpg');">
+        <a href="pages/chaplaincy.html">
+          <div class="carousel-caption">
+            <h3>Chaplaincy</h3>
+            <p>Ministering hope, healing, and spiritual growth.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 5: Health -->
+      <div class="carousel-item" style="background-image: url('images/health.avif');">
+        <a href="pages/health.html">
+          <div class="carousel-caption">
+            <h3>Health</h3>
+            <p>Strengthening community wellness and access to care.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 6: Peace & Justice -->
+      <div class="carousel-item" style="background-image: url('images/peace and justice.jpg');">
+        <a href="pages/peace-justice.html">
+          <div class="carousel-caption">
+            <h3>Peace & Justice</h3>
+            <p>Building harmony, conflict resolution, and advocacy.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 7: Youth Development -->
+      <div class="carousel-item" style="background-image: url('images/youth development.jpg');">
+        <a href="pages/youth-development.html">
+          <div class="carousel-caption">
+            <h3>Youth Development</h3>
+            <p>Nurturing talents, leadership, and mentorship in youth.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Slide 8: Climate Change -->
+      <div class="carousel-item" style="background-image: url('images/climate2.webp');">
+        <a href="pages/climate-change.html">
+          <div class="carousel-caption">
+            <h3>Climate Change</h3>
+            <p>Championing environmental sustainability and resilience.</p>
+          </div>
+        </a>
+      </div>
     </div>
+
+    <button class="carousel-arrow right" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <div class="carousel-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
+    <span class="dot" onclick="goToSlide(5)"></span>
+    <span class="dot" onclick="goToSlide(6)"></span>
+    <span class="dot" onclick="goToSlide(7)"></span>
   </div>
 </section>
 
@@ -162,6 +220,7 @@
 </footer>
 
 <script>
+  // Smooth tab toggle
   function openTab(tabName) {
     const tabLinks = document.querySelectorAll(".tab-links");
     const tabContents = document.querySelectorAll(".tab-contents");
@@ -172,6 +231,40 @@
     document.getElementById(tabName).classList.add("active-tab");
     event.currentTarget.classList.add("active-link");
   }
+
+  // Carousel functionality
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.dot');
+
+  // Fix: dynamically set carousel width
+  const slideWrapper = document.querySelector('.carousel-slide');
+  slideWrapper.style.width = `${slides.length * 100}%`;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+
+    slideWrapper.style.transform = `translateX(-${index * (100 / slides.length)}%)`;
+
+    currentSlide = index;
+  }
+
+  function moveSlide(step) {
+    const next = (currentSlide + step + slides.length) % slides.length;
+    showSlide(next);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  window.addEventListener('load', () => showSlide(0));
 </script>
 
 </body>
