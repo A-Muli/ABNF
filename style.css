@@ -400,3 +400,8 @@ footer {
   flex: 1;
   min-width: 250px;
 }
+.contact-card i {
+  color: #9B59B6;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
