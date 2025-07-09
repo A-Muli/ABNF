@@ -13,15 +13,23 @@
   <div class="container">
     <div class="branding">
       <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1>Archbishop Nzimbi Foundation</h1>
+      <h1>Archbishop Benjamin Nzimbi Foundation</h1>
     </div>
-    <nav>
-      <a href="about us.html">About us</a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
       <a href="objectives.html">Strategic Objectives</a>
-      <a href="contact us.html">Contact us</a>
+      <a href="contact us.html">Contact</a>
     </nav>
-  </div>    
+  </div>
 </header>
+
 
 <!-- Hero Banner -->
 <section class="hero-slider">
@@ -286,6 +294,15 @@
   });
 
 </script>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navbar = document.getElementById('navbar');
+
+  navToggle.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+</script>
+
 
 </body>
 </html>
