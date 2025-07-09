@@ -199,18 +199,23 @@
 
 <section id="contact" class="section highlight contact">
   <h2>Contact Us</h2>
-  <form>
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" required />
+<form id="contactForm">
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" required />
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required />
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required />
 
-    <label for="message">Message:</label>
-    <textarea id="message" rows="5" required></textarea>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
 
-    <button type="submit">Send Message</button>
-  </form>
+  <button type="submit">Send Message</button>
+</form>
+
+<!-- Add this element to display feedback -->
+<p id="formStatus" style="margin-top: 1rem; color: rgb(223, 176, 240);"></p>
+
+
 </section>
 
 <footer>
@@ -257,6 +262,29 @@
   }
 
   window.addEventListener('load', () => showSlide(0));
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxwBsmq7vxAuAoN85qFh6hWBR3FbSd0uQbxTt47Wo4857Ybhi9pyNb501I4hoaNcwXXUw/exec';
+
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault(); // Prevent page reload
+
+    const formData = new FormData(form);
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        status.textContent = "Thank you! Your message has been sent.";
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        status.textContent = "Oops! Something went wrong.";
+        status.style.color = 'red';
+      });
+  });
+
 </script>
 
 </body>
