@@ -415,7 +415,9 @@ footer {
 .carousel-caption h3 {
   margin: 0;
   font-size: 1.8rem;
+  color: #FFD700; /* Matches the hero section text */
 }
+
 
 .carousel-caption p {
   font-size: 1rem;
