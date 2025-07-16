@@ -465,6 +465,80 @@ footer {
 .carousel-dots .dot.active {
   background-color: #9B59B6;
 }
+/* Contact CTA Section */
+.contact-cta {
+  background-color: #f3ecfa;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-cta h2 {
+  color: #6a1b9a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+}
+
+.contact-btn {
+  background-color: #9B59B6;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #6a1b9a;
+}
+
+/* Donate Section Styling */
+.donate-section {
+  background: linear-gradient(to right, #f6e9ff, #e6d1f2);
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.donate-section h2 {
+  font-size: 2rem;
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+.donate-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.donate-btn {
+  background-color: #9B59B6;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.donate-btn:hover {
+  background-color: #6a1b9a;
+}
+
 
 @keyframes scroll {
   0% { transform: translateX(0); }

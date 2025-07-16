@@ -41,8 +41,8 @@
 
     <!-- Contact Form -->
 
-    <form action="https://formsubmit.co/abnfoundationkitui@gmail.com" method="POST" class="contact-card">
-      <h3>Send Us a Message</h3>
+    <form action="https://formsubmit.co/sharleen.shac@gmail.com" method="POST" class="contact-card">
+  <h3>Send Us a Message</h3>
 
   <label for="name">Your Name</label>
   <input type="text" id="name" name="name" required />
@@ -53,10 +53,16 @@
   <label for="message">Message</label>
   <textarea id="message" name="message" rows="5" required></textarea>
 
-  <button type="submit">Send Message</button>
+  <!-- Optional FormSubmit settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="New Contact Message from ABNF Website">
+  <input type="hidden" name="_template" value="box"> 
+  <input type="hidden" name="_next" value="thank-you.html">
 
-  <p id="formStatus" style="margin-top: 1rem; font-weight: 600;"></p>
+  <button type="submit">Send Message</button>
 </form>
+
+
 
   </div>
 </section>
@@ -121,29 +127,6 @@
   </div>
 </footer>
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwoUnlvFpL-PhvkhpRcpJZFzBkasm18MxO6hBEU8dSg_KDV80TZMG7pELD9NmhK3Q7N/exec';
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => {
-        status.textContent = "✅ Message sent successfully!";
-        status.style.color = "green";
-        form.reset();
-      })
-      .catch(error => {
-        status.textContent = "❌ Something went wrong. Please try again.";
-        status.style.color = "red";
-        console.error('Error!', error.message);
-      });
-  });
-</script>
 
 
 </body>
