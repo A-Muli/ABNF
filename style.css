@@ -386,15 +386,6 @@ nav {
   background-color: #6a1b9a;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #9B59B6;
-  color: white;
-  margin-top: 3rem;
-}
-
 /* Carousel */
 .carousel-section {
   position: relative;
