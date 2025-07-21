@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .logo {
+  height: 50px;
+  border-radius: 6px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.donate-hero {
+  background: linear-gradient(to right, #f3e5f5, #e1bee7);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.donate-hero h2 {
+  color: #6a1b9a;
+  font-size: 2rem;
+}
+
+.donation-form-section {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.donation-form-section h3 {
+  text-align: center;
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+.donation-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+}
+
+.donation-form input,
+.donation-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.donation-form button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #9b59b6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donation-form button:hover {
+  background-color: #6a1b9a;
+}
+
+.impact-highlight {
+  background-color: #f9f0ff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.impact-highlight h3 {
+  color: #6a1b9a;
+}
+
+.impact-highlight ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+footer {
+  background-color: #9B59B6;
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+}
+
+.mpesa-info {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 1.5rem auto 0;
+  border-left: 5px solid #6a1b9a;
+  border-radius: 6px;
+  font-size: 1rem;
+  max-width: 400px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.mpesa-info .paybill {
+  font-size: 1.4rem;
+  color: #6a1b9a;
+  font-weight: 600;
+}
+
+.impact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.impact-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.impact-card h4 {
+  margin-bottom: 0.5rem;
+  color: #9b59b6;
+}
+
+.impact-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Hero with background */
+.donate-hero.with-bg {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 5rem 2rem;
+  color: white;
+}
+
+.donate-hero.with-bg .overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.donate-hero.with-bg h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
+}
+
+/* Impact Gallery */
+.impact-gallery {
+  background: #fdf6ff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.impact-gallery h3 {
+  color: #6a1b9a;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.gallery-item {
+  max-width: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item h4 {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #9b59b6;
+  margin: 0;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+}

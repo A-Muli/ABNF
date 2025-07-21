@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate – Archbishop Benjamin Nzimbi Foundation</title>
+  <link rel="stylesheet" href="../donate.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo">
+    <h1><a href="../index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+  </div>
+</header>
+
+<!-- Hero Section with Background Image -->
+<section class="donate-hero with-bg" style="background-image: url('../images/children.png');">
+  <div class="overlay">
+    <h2>Transform a Life Today</h2>
+    <p>Your support empowers communities with clean water, education, healthcare, and hope.</p>
+  </div>
+</section>
+
+<!-- Donation Form -->
+<section class="donation-form-section">
+  <h3>Donate via M-Pesa</h3>
+  <form id="donationForm" class="donation-form">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">M-Pesa Phone Number</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{12}" placeholder="e.g. 254712345678" required>
+
+    <label for="amount">Amount (KES)</label>
+    <input type="number" id="amount" name="amount" required>
+
+    <label for="message">Optional Message</label>
+    <textarea id="message" name="message" rows="3"></textarea>
+
+    <button type="submit">Send M-Pesa Request</button>
+</form>
+
+
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        let phone = document.getElementById('phone').value.trim();
+        const amount = document.getElementById('amount').value;
+
+        if (phone.startsWith('07')) {
+            phone = '254' + phone.substring(1);
+        }
+
+        const res = await fetch('http://localhost:3000/api/mpesa/stkpush', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ phone, amount })
+        });
+
+        const result = await res.json();
+        if (res.ok) {
+            alert("Payment request sent to your phone.");
+        } else {
+            alert("M-Pesa STK Push failed.");
+            console.log(result);
+        }
+        });
+
+    </script>
+
+</section>
+
+<!-- Impact Gallery -->
+<section class="impact-gallery">
+  <h3>See the Impact</h3>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../images/education.jpg" alt="Education support">
+      <h4>Education</h4>
+    </div>
+    <div class="gallery-item">
+      <img src="../images/wash.jpg" alt="Water provision">
+      <h4>Clean Water</h4>
+    </div>
+    <div class="gallery-item">
+      <img src="../images/youth.jpg" alt="Youth mentorship">
+      <h4>Mentorship</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
