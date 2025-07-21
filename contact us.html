@@ -5,11 +5,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | ABNF</title>
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f3ecfa, #e7dfff);
+      color: #333;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .branding h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .branding a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      width: 70px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .section.contact {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .section.contact h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #6a1b9a;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      flex: 1 1 100%;
+      max-width: 450px;
+    }
+
+    .contact-card h3 {
+      color: #9b59b6;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-card p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .contact-card label {
+      display: block;
+      text-align: left;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #6a1b9a;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      font-size: 1rem;
+    }
+
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      border-color: #9b59b6;
+      outline: none;
+    }
+
+    .contact-card button {
+      margin-top: 1.5rem;
+      padding: 0.9rem 2rem;
+      background-color: #9b59b6;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .contact-card button:hover {
+      background-color: #6a1b9a;
+    }
+
+    footer {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 600px) {
+      .branding {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .branding h1 {
+        font-size: 1.1rem;
+      }
+
+      nav {
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact-card {
+        padding: 1.5rem;
+      }
+
+      .section.contact h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -28,106 +204,63 @@
   </div>
 </header>
 
+
 <section class="section contact">
-  <h2>Contact Us</h2>
+  <h2>We’d Love to Hear From You</h2>
 
-<div class="contact-card">
-  <h3>Reach Out</h3>
-  <p> Nairobi, Kenya</p>
-  <p> +254 712 345678</p>
-  <p> abnfoundationkitui@gmail.com</p>
-</div>
+  <div class="contact-wrapper">
+    <!-- Contact Info -->
+    <div class="contact-card">
+      <h3>Reach Out</h3>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+      <p><strong>Phone:</strong> 
+        <a href="tel:+254712345678" style="color: #333; text-decoration: none;">
+          +254 712 345678
+        </a>
+      </p>
 
+      <p><strong>Email:</strong> 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
+          target="_blank" 
+          style="color: #333; text-decoration: none;">
+          abnfoundationkitui@gmail.com
+        </a>
+      </p>
+
+    </div>
 
     <!-- Contact Form -->
+    <form action="https://formsubmit.co/abnfoundationkitui@gmail.com" method="POST" class="contact-card">
+      <h3>Send a Message</h3>
 
-    <form action="https://formsubmit.co/sharleen.shac@gmail.com" method="POST" class="contact-card">
-  <h3>Send Us a Message</h3>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
 
-  <label for="name">Your Name</label>
-  <input type="text" id="name" name="name" required />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="phone" required />
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+      <!-- Hidden FormSubmit config -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Message from ABNF Website">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/thank-you.html">
 
-  <!-- Optional FormSubmit settings -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="New Contact Message from ABNF Website">
-  <input type="hidden" name="_template" value="box"> 
-  <input type="hidden" name="_next" value="thank-you.html">
-
-  <button type="submit">Send Message</button>
-</form>
-
-
-
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-container">
-    <!-- Column 1 -->
-    <div class="footer-col">
-      <h3>Archbishop Benjamin Nzimbi Foundation</h3>
-      <p>ABNF is a Christian-based organization dedicated to the holistic transformation of communities through education, leadership, mentorship, and sustainable development.</p>
+    <!-- Reuse your original footer content here -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
     </div>
-
-    <!-- Column 2 -->
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="objectives.html">Strategic Objectives</a></li>
-        <li><a href="contact us.html">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="footer-col">
-      <h4>Focus Areas</h4>
-      <ul>
-        <li><a href="pages/education.html">Education</a></li>
-        <li><a href="pages/health.html">Health</a></li>
-        <li><a href="pages/wash.html">WASH</a></li>
-        <li><a href="pages/food-security.html">Food Security</a></li>
-        <li><a href="pages/youth-development.html">Youth Development</a></li>
-        <li><a href="pages/climate-change.html">Climate Change</a></li>
-        <li><a href="pages/chaplaincy.html">Chaplaincy</a></li>
-        <li><a href="pages/peace-justice.html">Peace & Justice</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 4 -->
-    <div class="footer-col">
-      <h4>Programs & Services</h4>
-      <ul>
-        <li>Leadership Training</li>
-        <li>Mentorship Programs</li>
-        <li>Capacity Building</li>
-        <li>Community Development</li>
-        <li>Spiritual Nurture</li>
-      </ul>
-    </div>
-
-    <!-- Column 5 -->
-    <div class="footer-col">
-      <h4>Get in Touch</h4>
-      <ul>
-        <li><i class="fas fa-envelope"></i> abnfoundationkitui@gmail.com</li>
-        <li><i class="fas fa-phone"></i> +254 722 408 534</li>
-        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
-
-
 
 </body>
 </html>
