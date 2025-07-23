@@ -15,13 +15,14 @@
       color: #333;
     }
 
-    header {
+    /* === DESKTOP HEADER === */
+    .desktop-header header {
       background-color: #9B59B6;
       color: white;
       padding: 1rem 1.5rem;
     }
 
-    .container {
+    .desktop-header .container {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -69,6 +70,69 @@
       border-radius: 10px;
     }
 
+    /* === MOBILE HEADER === */
+    .mobile-header {
+      display: none;
+    }
+
+    .mobile-nav {
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-logo {
+      width: 50px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .mobile-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* === DRAWER MENU === */
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: left;
+    }
+
+    .mobile-drawer a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mobile-drawer a:hover {
+      background-color: #8e44ad;
+    }
+
+    /* === CONTACT SECTION === */
     .section.contact {
       max-width: 1100px;
       margin: auto;
@@ -160,29 +224,22 @@
       font-size: 0.9rem;
     }
 
-    /* Mobile Optimization */
-    @media (max-width: 600px) {
-      .branding {
-        flex-direction: column;
-        text-align: center;
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .desktop-header {
+        display: none;
       }
 
-      .branding h1 {
-        font-size: 1.1rem;
+      .mobile-header {
+        display: block;
       }
 
-      nav {
-        justify-content: center;
-        flex-direction: column;
-        gap: 0.5rem;
+      .mobile-drawer {
+        display: none;
       }
 
-      .contact-card {
-        padding: 1.5rem;
-      }
-
-      .section.contact h2 {
-        font-size: 1.8rem;
+      .mobile-drawer.active {
+        display: flex;
       }
     }
   </style>
@@ -190,46 +247,65 @@
 
 <body>
 
-<header>
-  <div class="container">
-    <div class="branding">
-      <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+<!-- DESKTOP HEADER -->
+<div class="desktop-header">
+  <header>
+    <div class="container">
+      <div class="branding">
+        <a href="index.html">
+          <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="mobile-logo" />
+        </a>
+        <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+      </div>
+      <nav>
+        <a href="about us.html">About us</a>
+        <a href="objectives.html">Focus areas</a>
+        <a href="contact us.html">Contact us</a>
+      </nav>
     </div>
-    <nav>
-      <a href="about us.html">About us</a>
-      <a href="objectives.html">Focus areas</a>
-      <a href="contact us.html">Contact us</a>
-    </nav>
+  </header>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <header class="mobile-nav">
+    <div class="mobile-container">
+      <a href="index.html">
+        <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="mobile-logo" />
+      </a>
+      <div class="mobile-icons">
+        <button id="hamburger" class="icon">☰</button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about us.html">About us</a>
+    <a href="objectives.html">Focus areas</a>
+    <a href="contact us.html">Contact us</a>
   </div>
-</header>
+</div>
 
 
+<!-- MAIN SECTION -->
 <section class="section contact">
   <h2>We’d Love to Hear From You</h2>
 
   <div class="contact-wrapper">
-    <!-- Contact Info -->
     <div class="contact-card">
       <h3>Reach Out</h3>
       <p><strong>Location:</strong> Nairobi, Kenya</p>
-      <p><strong>Phone:</strong> 
-        <a href="tel:+254 114 836706" style="color: #333; text-decoration: none;">
+      <p><strong>Phone:</strong>
+        <a href="tel:+254114836706" style="color: #333; text-decoration: none;">
           +254 114 836706
         </a>
       </p>
-
-      <p><strong>Email:</strong> 
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
-          target="_blank" 
-          style="color: #333; text-decoration: none;">
+      <p><strong>Email:</strong>
+        <a href="mailto:abnfoundationkitui@gmail.com" style="color: #333; text-decoration: none;">
           abnfoundationkitui@gmail.com
         </a>
       </p>
-
     </div>
 
-    <!-- Contact Form -->
     <form action="https://formsubmit.co/alexmuli492@gmail.com" method="POST" class="contact-card">
       <h3>Send a Message</h3>
 
@@ -242,7 +318,6 @@
       <label for="message">Your Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
 
-      <!-- Hidden FormSubmit config -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New Contact Message from ABNF Website">
       <input type="hidden" name="_template" value="box">
@@ -253,14 +328,18 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Reuse your original footer content here -->
-    <div class="footer-bottom">
-      <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
-    </div>
-  </div>
+<footer>
+  <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
 </footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+
+  hamburger.addEventListener("click", () => {
+    mobileDrawer.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>

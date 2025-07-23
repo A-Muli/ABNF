@@ -7,6 +7,130 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+
+    /* ======= DESKTOP HEADER ======= */
+    .desktop-header header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 1.5rem;
+    }
+
+    .desktop-header .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .branding h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .branding a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* ======= MOBILE HEADER ======= */
+    .mobile-header {
+      display: none;
+    }
+
+    .mobile-nav {
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-logo {
+      width: 50px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .mobile-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+      text-align: left;
+    }
+
+    .mobile-drawer a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mobile-drawer a:hover {
+      background-color: #8e44ad;
+    }
+
+    /* ======= OBJECTIVES CARDS ======= */
+    .section {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
     .card-grid {
       display: flex;
       flex-wrap: wrap;
@@ -61,25 +185,107 @@
     .card-btn:hover {
       background-color: #6a1b9a;
     }
+
+    /* ======= FOOTER ======= */
+    footer {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 2rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 768px) {
+      .desktop-header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: block;
+      }
+
+      .mobile-drawer.active {
+        display: flex;
+      }
+
+      .footer-container {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="branding">
-      <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+<!-- DESKTOP HEADER -->
+<div class="desktop-header">
+  <header>
+    <div class="container">
+      <div class="branding">
+        <a href="index.html">
+          <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+        </a>
+        <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+      </div>
+      <nav>
+        <a href="about us.html">About us</a>
+        <a href="objectives.html">Focus areas</a>
+        <a href="contact us.html">Contact us</a>
+      </nav>
     </div>
-    <nav>
-      <a href="about us.html">About us</a>
-      <a href="objectives.html">Focus areas</a>
-      <a href="contact us.html">Contact us</a>
-    </nav>
+  </header>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <header class="mobile-nav">
+    <div class="mobile-container">
+      <a href="index.html">
+        <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="mobile-logo" />
+      </a>
+      <div class="mobile-icons">
+        <button id="hamburger" class="icon">☰</button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="objectives.html">Focus areas</a>
+    <a href="contact us.html">Contact us</a>
   </div>
-</header>
+</div>
 
-
+<!-- MAIN SECTION -->
 <section class="section">
   <h2>Our Strategic Objectives</h2>
   <div class="card-grid">
@@ -159,6 +365,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
     <!-- Column 1 -->
@@ -227,6 +434,15 @@
     <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+
+  hamburger.addEventListener("click", () => {
+    mobileDrawer.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
