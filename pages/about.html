@@ -8,7 +8,7 @@
 
   <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-98E5Nkb9tR8yMwEjzvRe4oBEsbWvHSt6Ob7yBoA4vBjM9nHXKKe2DWR+ajplVm37fS4w1j+WjcPfWQW5U2NKTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     body {
@@ -44,30 +44,122 @@
       margin-bottom: 1.5rem;
       padding-left: 1.5rem;
     }
+
+    /* Header styles */
+    header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header .logo {
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Mobile header */
+    .mobile-header {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #9B59B6;
+    }
+
+    .mobile-header .logo {
+      height: 50px;
+      border-radius: 6px;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 0.8rem 0;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: flex;
+      }
+    }
+
+    /* Footer specific tweak for visibility */
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
-<!-- ✅ Proper Header Section -->
+<!-- ✅ Mobile Header -->
+<div class="mobile-header">
+  <a href="../index.html"><img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" /></a>
+  <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+</div>
+<div id="mobileNav" class="mobile-nav">
+  <a href="../index.html">Home</a>
+  <a href="../about us.html">About us</a>
+  <a href="../objectives.html">Strategic Objectives</a>
+  <a href="../contact us.html">Contact us</a>
+</div>
+
+<!-- ✅ Desktop Header -->
 <header>
-  <div class="container">
-    <div class="branding">
-      <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="../index.html"> Archbishop Nzimbi Foundation</a></h1>
-    </div>
-    <nav>
-      <a href="../about us.html">About Us</a>
-      <a href="../objectives.html">Strategic Objectives</a>
-      <a href="../contact us.html">Contact us</a>
-    </nav>
+  <div class="branding">
+    <a href="../index.html"><img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" /></a>
+    <h1><a href="../index.html" style="color: white; text-decoration: none;">Archbishop Nzimbi Foundation</a></h1>
   </div>
+  <nav>
+    <a href="../about us.html">About Us</a>
+    <a href="../objectives.html">Strategic Objectives</a>
+    <a href="../contact us.html">Contact us</a>
+  </nav>
 </header>
 
-<!-- Page Content -->
- <section class="section">
+<!-- ✅ Page Content -->
+<section class="section">
   <h2>Our Story</h2>
-  <p>The story of the Archbishop Benjamin Nzimbi Foundation (ABNF) began with the deep love and compassion shown by Archbishop Benjamin Nzimbi and his wife, Mama Alice. They believed that true faith is not only about preaching but also about helping people in practical ways. Their work touched the lives of many, especially those who were struggling the most.</p>
-
+  <p>The story of the Archbishop Benjamin Nzimbi Foundation (ABNF) began with the deep love and compassion...</p>
   <p>Over the years, they started many small but powerful projects. They gave sewing machines to women and helped them learn tailoring, so they could support their families. They bought bicycles for evangelists to help them reach far-away places and share the Gospel. They also provided water tanks for families who didn’t have access to clean water, and they offered food to those suffering from hunger and drought.</p>
 
   <p>In addition, they helped people in need by providing goats, chickens, and even cows, so families could earn a living. They also started a center called <strong>St. Thomas of the Open Door</strong>, where people struggling with mental health or addiction could find hope, care, and healing through the love of Christ.</p>
@@ -95,26 +187,24 @@
   <p>This plan defines the sectors that ABNF will provide interventions for and the role of the foundation and other stakeholders towards achieving the vision, mission, core values and sectoral objectives of the foundation.</p>
 </section>
 
+<!-- ✅ Footer -->
 <footer class="footer">
   <div class="footer-container">
-    <!-- Column 1 -->
     <div class="footer-col">
       <h3>Archbishop Benjamin Nzimbi Foundation</h3>
-      <p>ABNF is a Christian-based organization dedicated to the holistic transformation of communities through education, leadership, mentorship, and sustainable development.</p>
+      <p>ABNF is a Christian-based organization dedicated to the holistic transformation...</p>
     </div>
 
-    <!-- Column 2 -->
     <div class="footer-col">
       <h4>Explore</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="objectives.html">Strategic Objectives</a></li>
-        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about us.html">About Us</a></li>
+        <li><a href="../objectives.html">Strategic Objectives</a></li>
+        <li><a href="../contact us.html">Contact Us</a></li>
       </ul>
     </div>
 
-    <!-- Column 3 -->
     <div class="footer-col">
       <h4>Focus Areas</h4>
       <ul>
@@ -129,7 +219,6 @@
       </ul>
     </div>
 
-    <!-- Column 4 -->
     <div class="footer-col">
       <h4>Programs & Services</h4>
       <ul>
@@ -141,19 +230,13 @@
       </ul>
     </div>
 
-    <!-- Column 5 -->
     <div class="footer-col">
       <h4>Get in Touch</h4>
       <p><strong>Phone:</strong> 
-        <a href="tel:+254 114 836706" style="color: #ffffff; text-decoration: none;">
-          +254 114 836706
-        </a>
+        <a href="tel:+254114836706">+254 114 836706</a>
       </p>
-
       <p><strong>Email:</strong> 
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
-          target="_blank" 
-          style="color: #ffffff; text-decoration: none;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" target="_blank">
           abnfoundationkitui@gmail.com
         </a>
       </p>
@@ -163,5 +246,14 @@
     <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ✅ Drawer Toggle Script -->
+<script>
+  function toggleMobileMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>

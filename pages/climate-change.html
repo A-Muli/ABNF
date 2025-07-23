@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Climate Change – Archbishop Nzimbi Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+
   <style>
+    body {
+      background: url('../images/climate1.jpeg') no-repeat center center / cover;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      min-height: 100vh;
+    }
+
     .section {
       max-width: 900px;
       margin: 3rem auto;
@@ -13,36 +25,140 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
+
     .section h2 {
       color: #6a1b9a;
       font-family: 'Playfair Display', serif;
     }
+
     .section ul {
       padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* ✅ Mobile Header */
+    .mobile-header {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #9B59B6;
+    }
+
+    .mobile-header .logo {
+      height: 50px;
+      border-radius: 6px;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 0.8rem 0;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: flex;
+      }
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
-<body style="background: url('../images/climate1.jpeg') no-repeat center center / cover; min-height: 100vh;">
+<body>
 
+<!-- ✅ Mobile Header -->
+<div class="mobile-header">
+  <a href="../index.html">
+    <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+  </a>
+  <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+</div>
+<div id="mobileNav" class="mobile-nav">
+  <a href="../index.html">Home</a>
+  <a href="../about us.html">About Us</a>
+  <a href="../objectives.html">Strategic Objectives</a>
+  <a href="../contact us.html">Contact Us</a>
+</div>
+
+<!-- ✅ Desktop Header -->
 <header>
-  <div class="container">
-    <div class="branding">
-      <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="../index.html">ArchBishop Benjamin Nzimbi Foundation</a></h1>
-    </div>
-    <nav>
-      <a href="../about us.html">About Us</a>
-      <a href="../objectives.html">Strategic Objectives</a>
-      <a href="../contact us.html">Contact us</a>
-    </nav>
+  <div class="branding">
+    <a href="../index.html"><img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" /></a>
+    <h1><a href="../index.html" style="color: white; text-decoration: none;">Archbishop Benjamin Nzimbi Foundation</a></h1>
   </div>
+  <nav>
+    <a href="../about us.html">About Us</a>
+    <a href="../objectives.html">Strategic Objectives</a>
+    <a href="../contact us.html">Contact us</a>
+  </nav>
 </header>
 
+<!-- ✅ Page Content -->
 <section class="section">
   <h2>Climate Change & Environmental Stewardship</h2>
 
   <p><strong>Overview:</strong><br>
-  ABNF promotes environmental care and climate resilience through community awareness, sustainable agriculture, and conservation practices.</p>
+    ABNF promotes environmental care and climate resilience through community awareness, sustainable agriculture, and conservation practices.
+  </p>
 
   <p><strong>Strategic Direction:</strong></p>
   <ul>
@@ -59,7 +175,7 @@
   </ul>
 </section>
 
-
+<!-- ✅ Footer -->
 <footer class="footer">
   <div class="footer-container">
     <!-- Column 1 -->
@@ -72,10 +188,10 @@
     <div class="footer-col">
       <h4>Explore</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about us.html">About Us</a></li>
-        <li><a href="objectives.html">Strategic Objectives</a></li>
-        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about us.html">About Us</a></li>
+        <li><a href="../objectives.html">Strategic Objectives</a></li>
+        <li><a href="../contact us.html">Contact Us</a></li>
       </ul>
     </div>
 
@@ -110,15 +226,10 @@
     <div class="footer-col">
       <h4>Get in Touch</h4>
       <p><strong>Phone:</strong> 
-        <a href="tel:+254 114 836706" style="color: #ffffff; text-decoration: none;">
-          +254 114 836706
-        </a>
+        <a href="tel:+254114836706">+254 114 836706</a>
       </p>
-
       <p><strong>Email:</strong> 
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
-          target="_blank" 
-          style="color: #ffffff; text-decoration: none;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" target="_blank">
           abnfoundationkitui@gmail.com
         </a>
       </p>
@@ -128,6 +239,13 @@
     <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ✅ Toggle Mobile Nav Script -->
+<script>
+  function toggleMobileMenu() {
+    document.getElementById('mobileNav').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>

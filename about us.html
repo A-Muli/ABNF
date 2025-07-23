@@ -6,45 +6,252 @@
   <title>About Us | Archbishop Nzimbi Foundation</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-98E5Nkb9tR8yMwEjzvRe4oBEsbWvHSt6Ob7yBoA4vBjM9nHXKKe2DWR+ajplVm37fS4w1j+WjcPfWQW5U2NKTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f3ecfa, #e7dfff);
+      color: #333;
+    }
+
+    /* === HEADER STYLES === */
+    .desktop-header header,
+    .mobile-header .mobile-nav {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 1.5rem;
+    }
+
+    .container,
+    .mobile-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo,
+    .mobile-logo {
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .branding h1,
+    h1 a {
+      font-size: 1.2rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .mobile-header {
+      display: none;
+    }
+
+    .mobile-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .mobile-drawer a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mobile-drawer a:hover {
+      background-color: #8e44ad;
+    }
+
+    .mobile-drawer.active {
+      display: flex;
+    }
+
+    /* === SECTION STYLES === */
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #6a1b9a;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 2rem 1.5rem 1rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+    }
+
+    .footer-col h4, .footer-col h3 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .desktop-header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="branding">
-      <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+<!-- DESKTOP HEADER -->
+<div class="desktop-header">
+  <header>
+    <div class="container">
+      <div class="branding">
+        <a href="index.html">
+          <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo"/>
+        </a>
+        <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+      </div>
+      <nav>
+        <a href="about us.html">About us</a>
+        <a href="objectives.html">Strategic Objectives</a>
+        <a href="contact us.html">Contact us</a>
+      </nav>
     </div>
-    <nav>
-      <a href="about us.html">About us</a>
-      <a href="objectives.html">Strategic Objectives</a>
-      <a href="contact us.html">Contact us</a>
-    </nav>
+  </header>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <header class="mobile-nav">
+    <div class="mobile-container">
+      <a href="index.html">
+        <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="mobile-logo"/>
+      </a>
+      <div class="mobile-icons">
+        <button id="hamburger" class="icon">☰</button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="about us.html">About us</a>
+    <a href="objectives.html">Strategic Objectives</a>
+    <a href="contact us.html">Contact us</a>
   </div>
-</header>
+</div>
 
-
+<!-- PAGE CONTENT -->
 <section class="section">
   <h2>About Us</h2>
-  <p>
-    The <strong>Archbishop Benjamin Nzimbi Foundation (ABNF)</strong> is a christian-based organization dedicated to community transformation through discipleship, capacity building, and sustainable development. Rooted in Christian values, ABNF believes in empowering individuals, families, and institutions to grow spiritually, socially, and economically.
-  </p>
-  <p>
-    Our approach is guided by biblical principles such as Luke 14:28–30 and Matthew 13:32, encouraging communities to start small, use local resources, and grow into fully empowered and self-sustaining entities.
-  </p>
+  <p>The <strong>Archbishop Benjamin Nzimbi Foundation (ABNF)</strong> is a Christian-based organization dedicated to community transformation through discipleship, capacity building, and sustainable development.</p>
+  <p>Our approach is guided by biblical principles such as Luke 14:28–30 and Matthew 13:32, encouraging communities to start small, use local resources, and grow into fully empowered and self-sustaining entities.</p>
 </section>
 
 <section class="section highlight">
   <h2>Our Vision</h2>
-  <p>
-    <em>To see a developed and transformed community enjoying life in its fullness.</em>
-  </p>
-
+  <p><em>To see a developed and transformed community enjoying life in its fullness.</em></p>
   <h2>Our Mission</h2>
-  <p>
-    <em>To equip communities with diverse skills for improved livelihoods, through capacity building and training.</em>
-  </p>
+  <p><em>To equip communities with diverse skills for improved livelihoods, through capacity building and training.</em></p>
 </section>
 
 <section class="section">
@@ -61,45 +268,35 @@
 
 <section class="section highlight">
   <h2>Who We Serve</h2>
-  <p>
-    ABNF serves <strong>communities, families, and institutions</strong>. We support widows, orphans, youth, and the elderly, empower families through parenting, and train institutions in leadership, planning, and governance.
-  </p>
+  <p>ABNF serves <strong>communities, families, and institutions</strong>. We support widows, orphans, youth, and the elderly, empower families through parenting, and train institutions in leadership, planning, and governance.</p>
 </section>
+
 <section class="section">
   <h2>Where We Work</h2>
-  <p>
-    The Archbishop Benjamin Nzimbi Foundation actively serves across several counties in Kenya to empower and uplift communities through its focus areas.
-  </p>
+  <p>The Archbishop Benjamin Nzimbi Foundation actively serves across several counties in Kenya to empower and uplift communities through its focus areas.</p>
   <p><strong>These are the areas where we are currently present and actively engaged:</strong></p>
   <div style="text-align: center; margin-top: 1.5rem;">
     <img src="images/MAP.png" alt="ABNF Reach Map" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
   </div>
 </section>
 
-
 <section class="section">
   <h2>Our Structure</h2>
-  <p>
-    ABNF is governed by a professional board, guided by a secretariat, and supported by focal points in each of our strategic pillars: Education, Health, WASH (Water supply, Saitation and Hygiene Promotion), Food Security, Youth Development, Chaplaincy, and Peace & Justice.
-  </p>
+  <p>ABNF is governed by a professional board, guided by a secretariat, and supported by focal points in each of our strategic pillars: Education, Health, WASH, Food Security, Youth Development, Chaplaincy, and Peace & Justice.</p>
 </section>
 
 <section class="section">
   <h2>Gratitude</h2>
-  <p>
-    We are thankful to God and to all the stakeholders, board members, volunteers, and partner institutions who made this strategic journey possible. Your effort and faith drive our mission forward.
-  </p>
+  <p>We are thankful to God and to all the stakeholders, board members, volunteers, and partner institutions who made this strategic journey possible. Your effort and faith drive our mission forward.</p>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-    <!-- Column 1 -->
     <div class="footer-col">
       <h3>Archbishop Benjamin Nzimbi Foundation</h3>
-      <p>ABNF is a Christian-based organization dedicated to the holistic transformation of communities through education, leadership, mentorship, and sustainable development.</p>
+      <p>ABNF is a Christian-based organization dedicated to holistic transformation through education, leadership, mentorship, and development.</p>
     </div>
-
-    <!-- Column 2 -->
     <div class="footer-col">
       <h4>Explore</h4>
       <ul>
@@ -109,8 +306,6 @@
         <li><a href="contact us.html">Contact Us</a></li>
       </ul>
     </div>
-
-    <!-- Column 3 -->
     <div class="footer-col">
       <h4>Focus Areas</h4>
       <ul>
@@ -124,8 +319,6 @@
         <li><a href="pages/peace-justice.html">Peace & Justice</a></li>
       </ul>
     </div>
-
-    <!-- Column 4 -->
     <div class="footer-col">
       <h4>Programs & Services</h4>
       <ul>
@@ -136,29 +329,26 @@
         <li>Spiritual Nurture</li>
       </ul>
     </div>
-
-    <!-- Column 5 -->
     <div class="footer-col">
       <h4>Get in Touch</h4>
-      <p><strong>Phone:</strong> 
-        <a href="tel:+254 114 836706" style="color: #ffffff; text-decoration: none;">
-          +254 114 836706
-        </a>
-      </p>
-
-      <p><strong>Email:</strong> 
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
-          target="_blank" 
-          style="color: #ffffff; text-decoration: none;">
-          abnfoundationkitui@gmail.com
-        </a>
-      </p>
+      <p><strong>Phone:</strong> <a href="tel:+254114836706" style="color: #fff; text-decoration: none;">+254 114 836706</a></p>
+      <p><strong>Email:</strong> <a href="mailto:abnfoundationkitui@gmail.com" style="color: #fff; text-decoration: none;">abnfoundationkitui@gmail.com</a></p>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- SCRIPT -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+
+  hamburger.addEventListener("click", () => {
+    mobileDrawer.classList.toggle("active");
+  });
+</script>
 
 </body>
 </html>
