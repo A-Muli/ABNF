@@ -1,41 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community Development | ABNF</title>
- <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Header styles */
+    header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header .logo {
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Mobile Header */
+    .mobile-header {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #9B59B6;
+    }
+
+    .mobile-header .logo {
+      height: 60px;
+      border-radius: 6px;
+    }
+
+    .mobile-header-title {
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      flex: 1;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-nav a {
+      color: white;
+      padding: 0.8rem 0;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-  <div class="container">
-    <div class="branding">
+
+<!-- ✅ Mobile Header -->
+<div class="mobile-header">
+  <a href="../index.html">
+    <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+  </a>
+  <div class="mobile-header-title">Archbishop Benjamin Nzimbi Foundation</div>
+  <div class="menu-icon" onclick="toggleMobileMenu()">☰</div>
+</div>
+<div id="mobileNav" class="mobile-nav">
+  <a href="../index.html">Home</a>
+  <a href="../about us.html">About Us</a>
+  <a href="../objectives.html">Strategic Objectives</a>
+  <a href="../contact us.html">Contact Us</a>
+</div>
+
+<!-- ✅ Desktop Header -->
+<header>
+  <div class="branding">
+    <a href="../index.html">
       <img src="../images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
-      <h1><a href="../index.html"> Archbishop Nzimbi Foundation</a></h1>
-    </div>
-    <nav>
-      <a href="../about us.html">About Us</a>
-      <a href="../objectives.html">Strategic Objectives</a>
-      <a href="../contact us.html">Contact us</a>
-    </nav>
+    </a>
+    <h1><a href="../index.html" style="color: white; text-decoration: none;">Archbishop Benjamin Nzimbi Foundation</a></h1>
   </div>
+  <nav>
+    <a href="../about us.html">About Us</a>
+    <a href="../objectives.html">Strategic Objectives</a>
+    <a href="../contact us.html">Contact Us</a>
+  </nav>
 </header>
-  <section class="section">
-    <h2>Community Development</h2>
-    <p><strong>Overview:</strong> ABNF facilitates holistic development by enhancing food security, health, WASH, and education services in underserved areas.</p>
 
-    <h3>Interventions</h3>
-    <ul>
-      <li>Borehole drilling and WASH infrastructure</li>
-      <li>Food security and agribusiness support</li>
-      <li>Health outreach services</li>
-      <li>Education infrastructure improvement</li>
-    </ul>
+<!-- ✅ Page Content -->
+<section class="section">
+  <h2>Community Development</h2>
+  <p><strong>Overview:</strong> ABNF facilitates holistic development by enhancing food security, health, WASH, and education services in underserved areas.</p>
 
-    <h3>Approach</h3>
-    <p>Grassroots engagement, local partnerships, and community-led change.</p>
-  </section>
-  <footer class="footer">
+  <h3>Interventions</h3>
+  <ul>
+    <li>Borehole drilling and WASH infrastructure</li>
+    <li>Food security and agribusiness support</li>
+    <li>Health outreach services</li>
+    <li>Education infrastructure improvement</li>
+  </ul>
+
+  <h3>Approach</h3>
+  <p>Grassroots engagement, local partnerships, and community-led change.</p>
+</section>
+
+<!-- ✅ Footer -->
+<footer class="footer">
   <div class="footer-container">
     <!-- Column 1 -->
     <div class="footer-col">
@@ -72,20 +181,20 @@
     <!-- Column 4 -->
     <div class="footer-col">
       <h4>Programs & Services</h4>
-<ul>
-  <li><a href="leadership-training.html">Leadership Training</a></li>
-  <li><a href="mentorship.html">Mentorship Programs</a></li>
-  <li><a href="capacity-building.html">Capacity Building</a></li>
-  <li><a href="community-development.html">Community Development</a></li>
-  <li><a href="spiritual-nurture.html">Spiritual Nurture</a></li>
-</ul>
+      <ul>
+        <li><a href="leadership-training.html">Leadership Training</a></li>
+        <li><a href="mentorship.html">Mentorship Programs</a></li>
+        <li><a href="capacity-building.html">Capacity Building</a></li>
+        <li><a href="community-development.html">Community Development</a></li>
+        <li><a href="spiritual-nurture.html">Spiritual Nurture</a></li>
+      </ul>
     </div>
 
     <!-- Column 5 -->
     <div class="footer-col">
       <h4>Get in Touch</h4>
       <p><strong>Phone:</strong> 
-        <a href="tel:+254 114 836706" style="color: #ffffff; text-decoration: none;">
+        <a href="tel:+254114836706" style="color: #ffffff; text-decoration: none;">
           +254 114 836706
         </a>
       </p>
@@ -103,6 +212,14 @@
     <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ✅ Drawer Menu Script -->
+<script>
+  function toggleMobileMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
