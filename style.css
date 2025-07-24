@@ -440,6 +440,13 @@ nav {
   color: #FFD700; /* Matches the hero section text */
 }
 
+.carousel-item.justice-slide {
+  background-size: cover;
+  background-position: top center; /* Shift focus to top */
+  transform: scale(0.9); /* Slightly zoom out */
+}
+
+
 
 .carousel-caption p {
   font-size: 1rem;
