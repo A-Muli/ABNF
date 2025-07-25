@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs & Services | ABNF</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+
+    /* ======= DESKTOP HEADER ======= */
+    .desktop-header header {
+      background-color: #9B59B6;
+      color: white;
+      padding: 1rem 1.5rem;
+    }
+
+    .desktop-header .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .branding h1 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .branding a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* ======= MOBILE HEADER ======= */
+    .mobile-header {
+      display: none;
+    }
+
+    .mobile-header-title {
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      flex: 1;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .mobile-logo {
+      height: 60px;
+      border-radius: 6px;
+    }
+
+    .mobile-nav {
+      background-color: #9B59B6;
+      padding: 1rem;
+    }
+
+    .mobile-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    
+
+    .mobile-icons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background-color: #9B59B6;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+      text-align: left;
+    }
+
+    .mobile-drawer a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mobile-drawer a:hover {
+      background-color: #8e44ad;
+    }
+
+    /* ======= OBJECTIVES CARDS ======= */
+    .section {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #6a1b9a;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-btn {
+      display: inline-block;
+      background-color: #9B59B6;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-btn:hover {
+      background-color: #6a1b9a;
+    }
+
+    /* ======= FOOTER ======= */
+    footer {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 2rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 768px) {
+      .desktop-header {
+        display: none;
+      }
+
+      .mobile-header {
+        display: block;
+      }
+
+      .mobile-drawer.active {
+        display: flex;
+      }
+
+      .footer-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DESKTOP HEADER -->
+<div class="desktop-header">
+  <header>
+    <div class="container">
+      <div class="branding">
+        <a href="index.html">
+          <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="logo" />
+        </a>
+        <h1><a href="index.html">Archbishop Benjamin Nzimbi Foundation</a></h1>
+      </div>
+      <nav>
+        <a href="about us.html">About us</a>
+        <a href="objectives.html">Focus areas</a>
+        <a href="contact us.html">Contact us</a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <header class="mobile-nav">
+    <div class="mobile-container">
+      <a href="index.html">
+        <img src="images/Approved Logo.jpeg" alt="ABNF Logo" class="mobile-logo" />
+      </a>
+      <div class="mobile-header-title">Archbishop Benjamin Nzimbi Foundation</div>
+      <div class="mobile-icons">
+        <button id="hamburger" class="icon">☰</button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="index.html">Home</a>
+    <a href="about us.html">About us</a>
+    <a href="contact us.html">Contact us</a>
+  </div>
+</div>
+
+<!-- MAIN SECTION -->
+<section class="section">
+  <h2>Our Programs and Services</h2>
+  <div class="card-grid">
+
+    <div class="card">
+      <img src="images/chaplaincy.jpg" alt="Leadership Training">
+      <div class="card-content">
+        <h3>Leadership Training</h3>
+        <p>Empowering individuals and communities through leadership training, spiritual guidance, and chaplaincy support</p>
+        <a href="pages/chaplaincy.html" class="card-btn">Details</a>
+      </div>
+    </div>  
+
+    <div class="card">
+      <img src="images/youth.jpg" alt="Mentorship">
+      <div class="card-content">
+        <h3>Mentorship Programs</h3>
+        <p>Empowering youth through mentorship, leadership training, and skills development.</p>
+        <a href="pages/mentorship.html" class="card-btn">Details</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/education.jpg" alt="Capacity Building">
+      <div class="card-content">
+        <h3>Capacity Building</h3>
+        <p>Strengthening communities by equipping individuals and institutions with the skills, knowledge, and tools needed to drive meaningful change.</p>
+        <a href="pages/capacity-building.html" class="card-btn">Details</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/health.webp" alt="Community Development">
+      <div class="card-content">
+        <h3>Community Development</h3>
+        <p>Promoting inclusive and sustainable community development through empowerment, collaboration, and locally-driven initiatives.</p>
+        <a href="pages/community-development.html" class="card-btn">Details</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/wash.jpg" alt="Spiritual Nurture">
+      <div class="card-content">
+        <h3>Spiritual Nurture</h3>
+        <p>Cultivating inner growth and spiritual well-being through compassionate guidance, meaningful connection, and values-driven support.</p>
+        <a href="pages/spiritual-nurture.html" class="card-btn">Details</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>Archbishop Benjamin Nzimbi Foundation</h3>
+      <p>ABNF is a Christian-based organization dedicated to the holistic transformation of communities through education, leadership, mentorship, and sustainable development.</p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="objectives.html">Strategic Objectives</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Focus Areas</h4>
+      <ul>
+        <li><a href="pages/education.html">Education</a></li>
+        <li><a href="pages/health.html">Health</a></li>
+        <li><a href="pages/wash.html">WASH</a></li>
+        <li><a href="pages/food-security.html">Food Security</a></li>
+        <li><a href="pages/youth-development.html">Youth Development</a></li>
+        <li><a href="pages/climate-change.html">Climate Change</a></li>
+        <li><a href="pages/chaplaincy.html">Chaplaincy</a></li>
+        <li><a href="pages/peace-justice.html">Peace & Justice</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h4>Programs & Services</h4>
+ <ul>
+  <li><a href="pages/leadership-training.html">Leadership Training</a></li>
+  <li><a href="pages/mentorship.html">Mentorship Programs</a></li>
+  <li><a href="pages/capacity-building.html">Capacity Building</a></li>
+  <li><a href="pages/community-development.html">Community Development</a></li>
+  <li><a href="pages/spiritual-nurture.html">Spiritual Nurture</a></li>
+</ul>
+    </div>
+
+    <!-- Column 5 -->
+    <div class="footer-col">
+      <h4>Get in Touch</h4>
+      <p><strong>Phone:</strong> 
+        <a href="tel:+254 114 836706" style="color: #ffffff; text-decoration: none;">
+          +254 114 836706
+        </a>
+      </p>
+
+      <p><strong>Email:</strong> 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abnfoundationkitui@gmail.com" 
+          target="_blank" 
+          style="color: #ffffff; text-decoration: none;">
+          abnfoundationkitui@gmail.com
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Archbishop Benjamin Nzimbi Foundation. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+
+  hamburger.addEventListener("click", () => {
+    mobileDrawer.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
