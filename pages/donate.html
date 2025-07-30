@@ -108,9 +108,21 @@
     }
 
     .impact-gallery {
-      padding: 2rem;
-      background: #ffffff;
+      padding: 3rem 2rem;
+      background: linear-gradient(to bottom right, #f7f2fc, #ede3f5);
       text-align: center;
+    }
+
+    .impact-gallery h3 {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #555;
     }
 
     .gallery {
@@ -121,17 +133,31 @@
     }
 
     .gallery-item {
-      width: 280px;
+      width: 240px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
     }
 
     .gallery-item img {
       width: 100%;
-      border-radius: 10px;
-      height: auto;
+      height: 160px;
+      object-fit: cover;
     }
 
     .gallery-item h4 {
-      margin-top: 0.5rem;
+      padding: 1rem;
+      margin: 0;
+      font-size: 1.05rem;
+      color: #333;
       font-weight: 600;
     }
   </style>
@@ -229,21 +255,31 @@
 <!-- Impact Gallery -->
 <section class="impact-gallery">
   <h3>See the Impact</h3>
+  <p class="gallery-subtitle">Empowering communities through strategic support and training</p>
   <div class="gallery">
-    <div class="gallery-item">
-      <img src="../images/education.jpg" alt="Education support">
-      <h4>Education</h4>
-    </div>
-    <div class="gallery-item">
-      <img src="../images/wash.jpg" alt="Water provision">
-      <h4>Clean Water</h4>
-    </div>
-    <div class="gallery-item">
-      <img src="../images/youth.jpg" alt="Youth mentorship">
-      <h4>Mentorship</h4>
-    </div>
+    <a href="/pages/leadership-training.html" class="gallery-item">
+      <img src="/images/youth.jpg" alt="Leadership Training">
+      <h4>Leadership Training</h4>
+    </a>
+    <a href="/pages/mentorship.html" class="gallery-item">
+      <img src="/images/mentorship.jpg" alt="Mentorship Programs">
+      <h4>Mentorship Programs</h4>
+    </a>
+    <a href="/pages/capacity-building.html" class="gallery-item">
+      <img src="/images/youth development.jpg" alt="Capacity Building">
+      <h4>Capacity Building</h4>
+    </a>
+    <a href="/pages/community-development.html" class="gallery-item">
+      <img src="/images/community.jpg" alt="Community Development">
+      <h4>Community Development</h4>
+    </a>
+    <a href="/pages/spiritual-nurture.html" class="gallery-item">
+      <img src="/images/chaplaincy.jpg" alt="Spiritual Nurture">
+      <h4>Spiritual Nurture</h4>
+    </a>
   </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
