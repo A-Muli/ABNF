@@ -107,7 +107,8 @@
 </div>
 <div id="mobileNav" class="mobile-nav">
   <a href="../about us.html">About Us</a>
-  <a href="../objectives.html">Strategic Objectives</a>
+  <a href="../objectives.html">Focus areas</a>
+  <a href="../programs.html">Programs and Services</a>
   <a href="../contact us.html">Contact Us</a>
 </div>
 
@@ -120,6 +121,7 @@
   <nav>
     <a href="about us.html">About us</a>
     <a href="objectives.html">Focus areas</a>
+    <a href="programs.html">Programs</a>
     <a href="contact us.html">Contact us</a>
   </nav>
 </header>
@@ -270,19 +272,6 @@
   </div>
 </section>
 
-<!-- Core Values -->
-<section id="Core Values" class="section">
-  <h2>Core Values</h2>
-  <ul>
-    <li> We are Christian,</li>
-    <li>We value life,</li>
-    <li>We believe in family,</li>
-    <li> We value integrity and justice,</li>
-    <li>We value equality of opportunities </li>
-    <li>We value the environment.</li>
-  </ul>
-</section>
-
 <!-- Get in Touch Section -->
 <section id="get-in-touch" class="section contact-cta">
   <h2>Want to Learn More or Collaborate?</h2>
@@ -291,6 +280,42 @@
   </p>
   <a href="contact us.html" class="btn contact-btn">Get in Touch</a>
 </section>
+
+
+
+
+
+
+<!-- Founders Section -->
+<section class="founders-section">
+  <h2 class="section-title">Our Founders</h2>
+  <div class="founders-carousel">
+    <div class="founder-slide active">
+      <img src="Images/Benjamin.jpg" alt="Founder Benjamin">
+      <div class="founder-text">
+        <h3>Benjamin Nzimbi</h3>
+        <p>"This foundation was born from a calling to serve humanity — to create a ripple of transformation one life at a time."</p>
+      </div>
+    </div>
+    <div class="founder-slide">
+      <img src="Images/Alice.jpg" alt="Founder Alice">
+      <div class="founder-text">
+        <h3>Alice Nzimbi</h3>
+        <p>"True impact begins with compassion. Our vision is to build resilient communities grounded in peace, dignity, and hope."</p>
+      </div>
+    </div>
+  </div>
+  <div class="founder-nav">
+    <button class="founder-prev">&#10094;</button>
+    <button class="founder-next">&#10095;</button>
+  </div>
+</section>
+
+
+
+
+
+
 
 <!-- Donate Section -->
 <section class="section highlight donate-section">
@@ -379,6 +404,35 @@
   });
 </script>
 
+<script>
+  const founderSlides = document.querySelectorAll(".founder-slide");
+  let currentIndex = 0;
+
+  function updateFounderSlide() {
+    founderSlides.forEach((slide, index) => {
+      slide.classList.remove("active");
+      if (index === currentIndex) {
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  document.querySelector(".founder-next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % founderSlides.length;
+    updateFounderSlide();
+  });
+
+  document.querySelector(".founder-prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + founderSlides.length) % founderSlides.length;
+    updateFounderSlide();
+  });
+
+</script>
+
+
+
+
+<!--FOOTER-->
 <footer class="footer">
   <div class="footer-container">
     <!-- Column 1 -->
@@ -393,7 +447,8 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about us.html">About Us</a></li>
-        <li><a href="objectives.html">Strategic Objectives</a></li>
+        <li><a href="objectives.html">Focus areas</a></li>
+        <li><a href="programs.html">Programs and Services</a></li>
         <li><a href="contact us.html">Contact Us</a></li>
       </ul>
     </div>
