@@ -289,31 +289,18 @@
 <!-- Founders Section -->
 <section class="founders-section">
   <h2 class="section-title">Our Founders</h2>
-  <div class="founders-carousel">
-    <div class="founder-slide active">
-      <img src="Images/Benjamin.jpg" alt="Founder Benjamin">
-      <div class="founder-text">
-        <h3>Benjamin Nzimbi</h3>
-        <p>"This foundation was born from a calling to serve humanity — to create a ripple of transformation one life at a time."</p>
-      </div>
-    </div>
-    <div class="founder-slide">
-      <img src="Images/Alice.jpg" alt="Founder Alice">
-      <div class="founder-text">
-        <h3>Alice Nzimbi</h3>
-        <p>"True impact begins with compassion. Our vision is to build resilient communities grounded in peace, dignity, and hope."</p>
-      </div>
+  <div class="founder-profile" id="founderProfile">
+    <img id="founderImage" src="Images/Benjamin.jpg" alt="Founder Benjamin">
+    <div class="founder-text">
+      <h3 id="founderName">Benjamin Nzimbi</h3>
+      <p id="founderQuote">"This foundation was born from a calling to serve humanity — to create a ripple of transformation one life at a time."</p>
     </div>
   </div>
   <div class="founder-nav">
-    <button class="founder-prev">&#10094;</button>
-    <button class="founder-next">&#10095;</button>
+    <button onclick="showFounder(0)" class="founder-btn">&#10094;</button>
+    <button onclick="showFounder(1)" class="founder-btn">&#10095;</button>
   </div>
 </section>
-
-
-
-
 
 
 
@@ -332,69 +319,39 @@
 
 
 <script>
-  // Smooth tab toggle
-  function openTab(tabName) {
-    const tabLinks = document.querySelectorAll(".tab-links");
-    const tabContents = document.querySelectorAll(".tab-contents");
+  const founders = [
+    {
+      name: "Benjamin Nzimbi",
+      image: "Images/Benjamin.jpg",
+      quote: "This foundation was born from a calling to serve humanity — to create a ripple of transformation one life at a time."
+    },
+    {
+      name: "Alice Nzimbi",
+      image: "Images/Alice.jpg",
+      quote: "True impact begins with compassion. Our vision is to build resilient communities grounded in peace, dignity, and hope."
+    }
+  ];
 
-    tabLinks.forEach(link => link.classList.remove("active-link"));
-    tabContents.forEach(content => content.classList.remove("active-tab"));
+  let currentFounder = 0;
 
-    document.getElementById(tabName).classList.add("active-tab");
-    event.currentTarget.classList.add("active-link");
+  function showFounder(index) {
+    if (index === currentFounder) return;
+
+    const profile = document.getElementById("founderProfile");
+    profile.classList.add("fade-out");
+
+    setTimeout(() => {
+      const { name, image, quote } = founders[index];
+      document.getElementById("founderImage").src = image;
+      document.getElementById("founderImage").alt = `Founder ${name}`;
+      document.getElementById("founderName").textContent = name;
+      document.getElementById("founderQuote").textContent = quote;
+      currentFounder = index;
+      profile.classList.remove("fade-out");
+    }, 300);
   }
-   let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-item');
-  const dots = document.querySelectorAll('.dot');
-  const slideWrapper = document.querySelector('.carousel-slide');
-
-  function showSlide(index) {
-    if (!slideWrapper) return;
-    const slideWidthPercent = 100 / slides.length;
-    const offset = index * slideWidthPercent;
-    slideWrapper.style.transform = `translateX(-${offset}%)`;
-
-    // Update active dot
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-
-    currentSlide = index;
-  }
-
-  function moveSlide(step) {
-    const next = (currentSlide + step + slides.length) % slides.length;
-    showSlide(next);
-  }
-
-  function goToSlide(index) {
-    showSlide(index);
-  }
-
-  window.addEventListener('load', () => showSlide(0));
-
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxwBsmq7vxAuAoN85qFh6hWBR3FbSd0uQbxTt47Wo4857Ybhi9pyNb501I4hoaNcwXXUw/exec';
-
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault(); // Prevent page reload
-
-    const formData = new FormData(form);
-
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => {
-        status.textContent = "Thank you! Your message has been sent.";
-        form.reset();
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        status.textContent = "Oops! Something went wrong.";
-        status.style.color = 'red';
-      });
-  });
-
 </script>
+
 <script>
   const navToggle = document.getElementById('navToggle');
   const navbar = document.getElementById('navbar');
